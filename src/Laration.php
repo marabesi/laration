@@ -1,6 +1,6 @@
 <?php
 
-namespace Laration;
+namespace Marabesi;
 
 use Illuminate\Console\Command;
 

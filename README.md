@@ -28,7 +28,7 @@ composer update
 ``` php
 protected $commands = [
     // Commands\Inspire::class,
-    \Laration\Laration::class, // Add this line
+    \Marabesi\Laration::class, // Add this line
 ];
 ```
 
