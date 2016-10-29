@@ -1,0 +1,11 @@
+{
+    "name": "marabesi/laration",
+    "description": "Easy package to list all variables in a Laravel application",
+    "authors": [
+        {
+            "name": "marabesi",
+            "email": "matheus.marabesi@gmail.com"
+        }
+    ],
+    "require": {}
+}
