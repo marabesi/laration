@@ -23,6 +23,15 @@ If no argument is given to list it will display all variables at once.
 composer update
 ```
 
+- Add Laration class to your available commands, open the file **app/Console/Kernel.php** and add the following line on ```$commands``` array
+
+``` php
+protected $commands = [
+    // Commands\Inspire::class,
+    \Laration\Laration::class, // Add this line
+];
+```
+
 # Available commands
 
 Display only **app** variables
