@@ -45,8 +45,14 @@ class Laration extends Command
         foreach ($configArray as $header => $items) {
             foreach ($items as $key => $value) {
                 if (!is_array($value)) {
-                    $data[$header][] = [$key, $value];
-                }
+					$data[$header][] = [$key, $value];
+				} else {
+					foreach ($value as $arrayItem => $valueItem) {
+						if (!is_array($valueItem)) {
+							$data[$header][] = [$key, $valueItem];
+						}
+					}
+				}	
             }
 
             if (array_key_exists($header, $data)) {
