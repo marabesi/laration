@@ -1,5 +1,5 @@
 # Laration
-Simple package to see all current configurations being used by yout Laravel application. 
+Simple package to see all current configurations being used by your Laravel application. 
 
 Have you ever wanted to list your environment variables without open each file in config folder? With Laration it is a easy task, just run **php artisan laration:list** and all variables will be listed.
 
