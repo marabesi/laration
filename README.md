@@ -87,9 +87,3 @@ Display only **view** variables
 ``` 
 php artisan laration:list view 
 ```
-
-# Known issues
-
-Currently the project doesn't suport recursive arrays
-
-
