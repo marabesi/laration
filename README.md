@@ -13,7 +13,7 @@ If no argument is given to list it will display all variables at once.
 
 ```
 {
-	"marabesi/laration": "dev-master"
+	"marabesi/laration": "^1.0"
 }
 ```
 
