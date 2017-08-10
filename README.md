@@ -1,4 +1,7 @@
 # Laration
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0cf8dab7c61944988d9e2da8edae44cc)](https://www.codacy.com/app/matheus-marabesi/laration?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=marabesi/laration&amp;utm_campaign=Badge_Grade)
+
 Simple package to see all current configurations being used by your Laravel application. 
 
 Have you ever wanted to list your environment variables without open each file in config folder? With Laration it is a easy task, just run **php artisan laration:list** and all variables will be listed.
