@@ -1,3 +1,4 @@
 vendor/
 .idea/
 .phpcomplete_extended/
+.vscode/
