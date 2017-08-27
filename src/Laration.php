@@ -36,23 +36,23 @@ class Laration extends Command
      * @return mixed
      */
     public function handle()
-	{
-	    $option = strtolower($this->argument('option'));
-	    $configs = config();
+    {
+        $option = strtolower($this->argument('option'));
+        $configs = config();
 
         $configArray = $configs->all();
 
         foreach ($configArray as $header => $items) {
             foreach ($items as $key => $value) {
                 if (!is_array($value)) {
-					$data[$header][] = [$key, $value];
-				} else {
-					foreach ($value as $arrayItem => $valueItem) {
-						if (!is_array($valueItem)) {
-							$data[$header][] = [$key, $valueItem];
-						}
-					}
-				}	
+                    $data[$header][] = [$key, $value];
+                } else {
+                    foreach ($value as $arrayItem => $valueItem) {
+                        if (!is_array($valueItem)) {
+                            $data[$header][] = [$key, $valueItem];
+                        }
+                    }
+                }    
             }
 
             if (array_key_exists($header, $data)) {
