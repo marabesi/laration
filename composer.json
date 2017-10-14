@@ -1,16 +1,30 @@
 {
     "name": "marabesi/laration",
     "description": "Easy package to list all variables in a Laravel application",
+    "keywords": ["laravel", "configurations", "variables"],
+    "license": "Apache-2.0",
+    "support": {
+        "issues": "https://github.com/marabesi/laration/issues",
+        "source": "https://github.com/marabesi/laration"
+    },
     "authors": [
         {
-            "name": "marabesi",
+            "name": "Matheus Marabesi",
             "email": "matheus.marabesi@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "php": ">=7.0",
+        "illuminate/support": "5.5.*",
+    },
 	"autoload" : {
 		"psr-4": {
-			"Marabesi\\": "src"
-		}	
-	}
+			"Marabesi\\": "src/"
+		}
+	},
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
