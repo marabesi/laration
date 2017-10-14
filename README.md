@@ -9,7 +9,7 @@
 
 Simple package to see all current configurations being used by your Laravel application.
 
-Have you ever wanted to list your environment variables without open each file in config folder? With Laration it is a easy task, just run **php artisan laration:list** and all variables will be listed.
+Have you ever wanted to list your environment variables without open each file in config folder? With Laration it is an easy task, just run **php artisan laration:list** and all variables will be listed.
 
 ![config list](https://s14.postimg.org/nqwnap9vl/Screen_Shot_2016_10_29_at_12_34_56.png)
 
@@ -19,7 +19,7 @@ If no argument is given to list it will display all variables at once.
 
 - Inside your composer.json add the following dependency
 
-```
+```json
 {
 	"marabesi/laration": "^1.0"
 }
