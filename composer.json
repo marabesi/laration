@@ -8,9 +8,16 @@
         }
     ],
     "require": {},
-	"autoload" : {
+    "autoload" : {
 		"psr-4": {
 			"Marabesi\\": "src"
-		}	
-	}
+		}
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Marabesi\\ServiceProvider"
+            ]
+        }
+    }
 }
