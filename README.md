@@ -17,28 +17,13 @@ If no argument is given to list it will display all variables at once.
 
 # Installation
 
-- Inside your composer.json add the following dependency
+- Require Laration with composer
 
 ```
-{
-	"marabesi/laration": "^1.0"
-}
+composer require marabesi/laration
 ```
 
-- Update yor project
-
-```
-composer update
-```
-
-- Add Laration class to your available commands, open the file **app/Console/Kernel.php** and add the following line on ```$commands``` array
-
-``` php
-protected $commands = [
-    // Commands\Inspire::class,
-    \Marabesi\Laration::class, // Add this line
-];
-```
+Done, Laration will be add to your project by [Laravel's 5.5 Package Auto-Discovery](https://laravel.com/docs/5.5/packages#package-discovery).
 
 # Available commands
 
