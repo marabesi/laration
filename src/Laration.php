@@ -3,6 +3,7 @@
 namespace Marabesi;
 
 use Illuminate\Console\Command;
+use Config;
 
 class Laration extends Command
 {
@@ -11,7 +12,7 @@ class Laration extends Command
      *
      * @var string
      */
-    protected $signature = 'laration:list {option=all}';
+    protected $signature = 'laration:list {option?}';
 
     /**
      * The console command description.
@@ -37,30 +38,55 @@ class Laration extends Command
      */
     public function handle()
     {
-        $option = strtolower($this->argument('option'));
-        $configs = config();
+        $option = strtolower($this->argument('option')) ? :null;
+        $configs = $option ? Config::getMany([$option]) : array_first(Config::getMany([$option]));
 
-        $configArray = $configs->all();
+        collect($configs)->each(function($configs,$fileName) {
+            $this->table([$fileName,'value'], $this->getRows(collect($configs)));
+        });
 
-        foreach ($configArray as $header => $items) {
-            foreach ($items as $key => $value) {
-                if (!is_array($value)) {
-                    $data[$header][] = [$key, $value];
-                } else {
-                    foreach ($value as $arrayItem => $valueItem) {
-                        if (!is_array($valueItem)) {
-                            $data[$header][] = [$key, $valueItem];
-                        }
-                    }
-                }    
-            }
+    }
 
-            if (array_key_exists($header, $data)) {
-                if ($header == $option || $option == 'all') {
-                    $this->table([$header, 'value'], $data[$header]);
-                }
-            }
-        }
+    private function getRows($configs)
+    {
+        return array_merge($this->flatten($configs),$this->flattenArr($configs));
+    }
+
+    /**
+     * this method flattens the configuration keys with array like providers in app.php
+     * @param $configs
+     * @return mixed
+     */
+    private function flattenArr($configs)
+    {
+        return $configs
+            ->filter(function($config){
+                return is_array($config);
+            })
+            ->flatMap(function($config,$key){
+                return $this->flatten(collect($config),$key);
+            })
+            ->values()
+            ->toArray();
+    }
+
+    /**
+     * returns [["name","laravel"],["env","local"]]
+     * @param $configs
+     * @param null $configKeyName
+     * @return mixed
+     */
+    private function flatten($configs,$configKeyName = null)
+    {
+        return $configs
+            ->filter(function($config){
+                return !is_array($config);
+            })
+            ->map(function($config,$key) use ($configKeyName){
+                return [$configKeyName ? : $key,$config];
+            })
+            ->values()
+            ->toArray();
     }
 }
 
