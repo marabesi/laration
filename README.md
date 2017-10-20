@@ -21,7 +21,6 @@ If no argument is given to list it will display all variables at once.
 
 ```
 composer require marabesi/laration
-=======
 ```
 
 Done, Laration will be add to your project by [Laravel's 5.5 Package Auto-Discovery](https://laravel.com/docs/5.5/packages#package-discovery).
