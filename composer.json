@@ -18,11 +18,11 @@
         "illuminate/support": "5.5.*",
         "illuminate/console": "5.5.*"
     },
-	"autoload" : {
-		"psr-4": {
-			"Marabesi\\": "src/"
-		}
-	},
+    "autoload" : {
+        "psr-4": {
+            "Marabesi\\": "src/"
+        }
+    },
     "config": {
         "sort-packages": true
     },
