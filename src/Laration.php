@@ -42,6 +42,8 @@ class Laration extends Command
 
         $configArray = $configs->all();
 
+        ksort($configArray);
+
         foreach ($configArray as $header => $items) {
             foreach ($items as $key => $value) {
                 if (!is_array($value)) {
@@ -52,7 +54,7 @@ class Laration extends Command
                             $data[$header][] = [$key, $valueItem];
                         }
                     }
-                }    
+                }
             }
 
             if (array_key_exists($header, $data)) {
