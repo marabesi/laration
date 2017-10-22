@@ -12,14 +12,7 @@
             "name": "Matheus Marabesi",
             "email": "matheus.marabesi@gmail.com"
         }
-    ],
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Marabesi\\ServiceProvider"
-            ]
-        }
-    }
+    ],    
     "require": {
         "php": ">=7.0",
         "illuminate/support": "5.5.*",
@@ -28,6 +21,13 @@
     "autoload" : {
         "psr-4": {
             "Marabesi\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Marabesi\\ServiceProvider"
+            ]
         }
     },
     "config": {
