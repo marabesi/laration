@@ -13,6 +13,13 @@
             "email": "matheus.marabesi@gmail.com"
         }
     ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Marabesi\\ServiceProvider"
+            ]
+        }
+    }
     "require": {
         "php": ">=7.0",
         "illuminate/support": "5.5.*",
