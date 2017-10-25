@@ -15,6 +15,17 @@ Have you ever wanted to list your environment variables without open each file i
 
 If no argument is given to list it will display all variables at once.
 
+# Before install
+
+|Laravel version|Laration version|
+|---------------|----------------|
+|5.0| 1.0|
+|5.1| 1.0|
+|5.2| 1.0|
+|5.3| 1.0|
+|5.4| 1.0|
+|5.5| 1.1|
+
 # Installation
 
 - Require Laration with composer
@@ -22,8 +33,10 @@ If no argument is given to list it will display all variables at once.
 ```
 composer require marabesi/laration
 ```
+ 
+### Are you using Laravel 5.5?
 
-Done, Laration will be add to your project by [Laravel's 5.5 Package Auto-Discovery](https://laravel.com/docs/5.5/packages#package-discovery).
+If yes, that's it! Laration will be add to your project by [Laravel's 5.5 Package Auto-Discovery](https://laravel.com/docs/5.5/packages#package-discovery).
 
 # Available commands
 
