@@ -2,8 +2,8 @@
 
 namespace Marabesi;
 
-use Illuminate\Console\Command;
 use Config;
+use Illuminate\Console\Command;
 
 class Laration extends Command
 {
@@ -38,18 +38,18 @@ class Laration extends Command
      */
     public function handle()
     {
-        $option = strtolower($this->argument('option')) ? :null;
+        $option = strtolower($this->argument('option')) ?: null;
 
         $configFiles = $option ? Config::getMany([$option]) : array_first(Config::getMany([$option]));
 
-        collect($configFiles)
-            ->each(function($configs,$fileName) {
-                $this->table([$fileName,'value'], $this->flatten(collect($configs)));
-            });
+        collect($configFiles)->each(function ($configs, $fileName) {
+            $this->table([$fileName, 'value'], $this->flatten(collect($configs)));
+        });
     }
 
     /**
-     * returns collection like [["name","laravel"],["env","local"]]
+     * Return a collection like [["name","laravel"],["env","local"]].
+     *
      * @param $configs
      * @return mixed
      */
@@ -57,46 +57,43 @@ class Laration extends Command
     {
         $result = collect();
 
-        $configs
-            ->each(function($config,$key) use (&$result){
-                $result =  $result->merge($this->flattenToMerge($config,$key)
-                    ->values());
-            });
+        $configs->each(function ($config, $key) use (&$result) {
+            $result = $result->merge($this->flattenToMerge($config, $key)->values());
+        });
 
         return $result;
     }
 
     /**
-     * check if the configuration is array or not then returns
-     * collection like [["provider","Illuminate\Auth..."],["provider","Illuminate\Bus..."]]
+     * Check if the configuration is array or not then returns collection like
+     * [["provider","Illuminate\Auth..."],["provider","Illuminate\Bus..."]].
+     *
      * @param $config
      * @param $key
      * @return \Illuminate\Support\Collection|mixed
      */
-    private function flattenToMerge($config,$key)
+    private function flattenToMerge($config, $key)
     {
-        if(is_array($config))
-        {
-            return $this->flattenArr(collect($config),$key);
+        if(is_array($config)) {
+            return $this->flattenArr(collect($config), $key);
         }
 
         return collect([[$key,$config]]);
     }
 
     /**
-     * this method flattens the configuration keys with array like providers in app.php
+     * Flattens the configuration keys with array like providers in app.php.
+     *
      * @param $configKeyName
      * @param $configs
      * @return mixed
      */
-    private function flattenArr($configs,$configKeyName)
+    private function flattenArr($configs, $configKeyName)
     {
-        return $configs
-            ->filter(function($config){
-                return !is_array($config);
-            })->map(function($config) use ($configKeyName){
-                return [$configKeyName,$config];
-            });
+        return $configs->filter(function ($config) {
+            return !is_array($config);
+        })->map(function ($config) use ($configKeyName) {
+            return [$configKeyName, $config];
+        });
     }
 }
-
