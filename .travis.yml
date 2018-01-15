@@ -6,7 +6,8 @@ php:
   - 7.0
 
 before_script:
-  - chmod 777 install-test.sh
+  - chmod 777 install.sh
+  - chmod 777 test.sh
 
 script:
-  - sh install-test.sh
+  - sh test.sh
