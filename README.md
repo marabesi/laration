@@ -1,9 +1,9 @@
 # Laration
 
+[![Build Status](https://travis-ci.org/marabesi/laration.svg?branch=master)](https://travis-ci.org/marabesi/laration)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/0cf8dab7c61944988d9e2da8edae44cc)](https://www.codacy.com/app/matheus-marabesi/laration?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=marabesi/laration&amp;utm_campaign=Badge_Grade)
 [![Latest Stable Version](https://poser.pugx.org/marabesi/laration/v/stable)](https://packagist.org/packages/marabesi/laration)
 [![Total Downloads](https://poser.pugx.org/marabesi/laration/downloads)](https://packagist.org/packages/marabesi/laration)
-[![Latest Unstable Version](https://poser.pugx.org/marabesi/laration/v/unstable)](https://packagist.org/packages/marabesi/laration)
 [![License](https://poser.pugx.org/marabesi/laration/license)](https://packagist.org/packages/marabesi/laration)
 [![composer.lock](https://poser.pugx.org/marabesi/laration/composerlock)](https://packagist.org/packages/marabesi/laration)
 [![BCH compliance](https://bettercodehub.com/edge/badge/marabesi/laration?branch=master)](https://bettercodehub.com/)
