@@ -26,7 +26,7 @@ If no argument is given to list it will display all variables at once.
 |5.3| 1.0|
 |5.4| 1.0|
 |5.5| 1.1|
-|5.6| 1.2|
+|5.6| 1.2 (or the latest available)|
 
 # Installation
 
