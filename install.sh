@@ -3,6 +3,7 @@
 composer create-project --prefer-dist laravel/laravel test-project-5-4 "5.4.*" -vv
 cd test-project-5-4 &&
     composer require marabesi/laration:1.0 -vv &&
+    cp ../app.php config/app.php &&
     php artisan laration:list app &&
     cd .. &&
     rm -rf test-project-5-4
@@ -20,3 +21,10 @@ cd test-project-5-6 &&
     php artisan laration:list app &&
     cd .. &&
     rm -rf test-project-5-6
+
+composer create-project --prefer-dist laravel/laravel test-project-5-7 "5.7.*" -vv
+cd test-project-5-7 &&
+    composer require marabesi/laration:1.2 -vv &&
+    php artisan laration:list app &&
+    cd .. &&
+    rm -rf test-project-5-7
