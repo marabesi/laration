@@ -7,6 +7,7 @@
 [![License](https://poser.pugx.org/marabesi/laration/license)](https://packagist.org/packages/marabesi/laration)
 [![composer.lock](https://poser.pugx.org/marabesi/laration/composerlock)](https://packagist.org/packages/marabesi/laration)
 [![BCH compliance](https://bettercodehub.com/edge/badge/marabesi/laration?branch=master)](https://bettercodehub.com/)
+[![HitCount](http://hits.dwyl.io/marabesi/laration.svg)](http://hits.dwyl.io/marabesi/laration)
 
 Simple package to see all current configurations being used by your Laravel application.
 
