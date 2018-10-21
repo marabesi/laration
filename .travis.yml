@@ -2,12 +2,19 @@ language: php
 
 dist: trusty
 
+os:
+  - linux
+  - osx
+
+matrix:
+  allow_failures:
+    - os: osx
+
 php:
   - 7.1
   - 7.2
 
 before_script:
-  - chmod 777 install.sh
   - chmod 777 test.sh
 
 script:
