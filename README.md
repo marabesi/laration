@@ -35,8 +35,12 @@ If no argument is given to list it will display all variables at once.
 ```
 composer require marabesi/laration
 ```
+
+# Laravel <= 5.4
+
+Add the `Marabesi\ServiceProvider::class` in the provider array (config/app.php)
  
-### Are you using Laravel 5.5?
+# Laravel >= 5.5?
 
 If yes, that's it! Laration will be add to your project by [Laravel's 5.5 Package Auto-Discovery](https://laravel.com/docs/5.5/packages#package-discovery).
 
