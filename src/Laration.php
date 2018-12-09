@@ -34,7 +34,7 @@ class Laration extends Command
     /**
      * Execute the console command.
      *
-     * @return mixed
+     * @return null
      */
     public function handle()
     {
@@ -74,7 +74,7 @@ class Laration extends Command
      */
     private function flattenToMerge($config, $key)
     {
-        if(is_array($config)) {
+        if (is_array($config)) {
             return $this->flattenArr(collect($config), $key);
         }
 
