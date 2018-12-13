@@ -6,7 +6,7 @@
         bootstrap="./vendor/autoload.php"
         cacheResult="false"
         cacheTokens="false"
-        colors="false"
+        colors="true"
         convertErrorsToExceptions="true"
         convertNoticesToExceptions="true"
         convertWarningsToExceptions="true"
