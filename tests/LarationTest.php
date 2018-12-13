@@ -33,26 +33,27 @@ class LarationTest extends TestCase
         $this->assertContains('filesystems', $output);
     }
 
-    public function testShouldListSingleVariableBasedOnTheKeys()
+    /**
+     * @dataProvider variablesProvider
+     */
+    public function testShouldListSingleVariableBasedOnTheKeys($contains, $notContains)
     {
         Artisan::call('laration:list', [
-            'option' => 'auth'
+            'option' => $contains,
         ]);
 
         $output = Artisan::output();
 
-        $this->assertContains('auth', $output);
+        $this->assertContains($contains, $output);
 
-        $this->assertNotContains('hashing', $output);
-        $this->assertNotContains('app', $output);
-        $this->assertNotContains('mail', $output);
-        $this->assertNotContains('services', $output);
-        $this->assertNotContains('database', $output);
-        $this->assertNotContains('cache', $output);
-        $this->assertNotContains('session', $output);
-        $this->assertNotContains('queue', $output);
-        $this->assertNotContains('view', $output);
-        $this->assertNotContains('logging', $output);
-        $this->assertNotContains('filesystems', $output);
+        foreach ($notContains as $value) {
+           $this->assertNotRegExp('/\b' . $value . '\b/' , $output);
+        }
+    }
+
+    public function variablesProvider()
+    {
+        return include 'providers/optionsProvider.php';
     }
 }
+
