@@ -64,3 +64,19 @@ fi
 echo "!!!SUCCESS!!!"
 echo "!!!LARAVEL 5.7!!!"
 echo "!!!SUCCESS!!!"
+
+composer create-project --prefer-dist -q laravel/laravel test-project-6-0 "6.0.*"
+cd test-project-6-0 &&
+    composer require marabesi/laration:1.4 -vv &&
+    php artisan laration:list app &&
+    cd .. &&
+    rm -rf test-project-6-0
+
+if [ -d "test-project-6-0" ]; then
+    echo "ERROR ::: test-project-6-0 folder exists."
+    exit 1
+fi
+
+echo "!!!SUCCESS!!!"
+echo "!!!LARAVEL 6.0!!!"
+echo "!!!SUCCESS!!!"
