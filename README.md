@@ -23,6 +23,7 @@ If no argument is given to list it will display all variables at once.
 |5.5| 1.1|
 |5.6, 5.7, 5.8| 1.3 |
 |6.0| 1.4 |
+|>= 7| 1.5 |
 
 # Installation
 
