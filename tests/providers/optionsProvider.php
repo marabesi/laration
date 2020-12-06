@@ -131,7 +131,6 @@ return [
             'app',
             'mail',
             'services',
-            'database',
             'cache',
             'session',
             'view',

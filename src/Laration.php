@@ -3,6 +3,7 @@
 namespace Marabesi;
 
 use Config;
+use Arr;
 use Illuminate\Console\Command;
 
 class Laration extends Command
@@ -40,7 +41,7 @@ class Laration extends Command
     {
         $option = strtolower($this->argument('option')) ?: null;
 
-        $configFiles = $option ? Config::getMany([$option]) : array_first(Config::getMany([$option]));
+        $configFiles = $option ? Config::getMany([$option]) : Arr::first(Config::getMany([$option]));
 
         collect($configFiles)->each(function ($configs, $fileName) {
             $this->table([$fileName, 'value'], $this->flatten(collect($configs)));

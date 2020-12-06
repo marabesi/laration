@@ -19,18 +19,18 @@ class LarationTest extends TestCase
 
         $output = Artisan::output();
 
-        $this->assertContains('hashing', $output);
-        $this->assertContains('auth', $output);
-        $this->assertContains('app', $output);
-        $this->assertContains('mail', $output);
-        $this->assertContains('services', $output);
-        $this->assertContains('database', $output);
-        $this->assertContains('cache', $output);
-        $this->assertContains('session', $output);
-        $this->assertContains('queue', $output);
-        $this->assertContains('view', $output);
-        $this->assertContains('logging', $output);
-        $this->assertContains('filesystems', $output);
+        $this->assertStringContainsString('hashing', $output);
+        $this->assertStringContainsString('auth', $output);
+        $this->assertStringContainsString('app', $output);
+        $this->assertStringContainsString('mail', $output);
+        $this->assertStringContainsString('services', $output);
+        $this->assertStringContainsString('database', $output);
+        $this->assertStringContainsString('cache', $output);
+        $this->assertStringContainsString('session', $output);
+        $this->assertStringContainsString('queue', $output);
+        $this->assertStringContainsString('view', $output);
+        $this->assertStringContainsString('logging', $output);
+        $this->assertStringContainsString('filesystems', $output);
     }
 
     /**
@@ -44,7 +44,7 @@ class LarationTest extends TestCase
 
         $output = Artisan::output();
 
-        $this->assertContains($contains, $output);
+        $this->assertStringContainsString($contains, $output);
 
         foreach ($notContains as $value) {
            $this->assertNotRegExp('/\b' . $value . '\b/' , $output);
